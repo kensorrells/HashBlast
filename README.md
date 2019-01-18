@@ -31,7 +31,7 @@ step 6: Execute the Code and Type Whatever you Want Hashed!
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ## Tech/framework used
-Macbook, but any OS can be used for this program
+I used OSX, but any OS can be used for this program
 
 <b>Built with</b>
 - [hashlib](https://docs.python.org/2/library/hashlib.html)

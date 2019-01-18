@@ -38,7 +38,6 @@ Macbook, but any OS can be used for this program
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 Big thanks to Akash Nimare for helping with formating the [README](https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3)!
 
 

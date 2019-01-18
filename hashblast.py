@@ -2,6 +2,8 @@ import hashlib
 
 
 def input_hash():
+    
+    #I created the variable md, beauase later I will be converting these hashes back to English
 
     md = input("Encode your data: ")
 

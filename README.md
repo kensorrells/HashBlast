@@ -41,13 +41,10 @@ Macbook, but any OS can be used for this program
 Big thanks to Akash Nimare for helping with formating the [README](https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3)!
 
 
-## Author
+## Authors
 
 * **Tyler Gorsulowsky** - *Initial work* - [Tyler's Portfolio](https://github.com/TylersPortfolio)
 * **Akash Nimare** - *README source* - [Akash's Github](https://github.com/akashnimare)
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 

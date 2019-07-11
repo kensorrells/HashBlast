@@ -43,7 +43,8 @@ Big thanks to Akash Nimare for helping with formating the [README](https://mediu
 
 ## Authors
 
-* **Tyler Gorsulowsky** - *Initial work* - [Tyler's Portfolio](https://github.com/TylersPortfolio)
+* **Kenneth Sorrells** - *Working Idea* - [KenSorrells](https://github.com/kensorrells)
+* **Tyler Gorsulowsky** - *Initial idea and framework* - [Tyler's Portfolio](https://github.com/TylersPortfolio)
 * **Akash Nimare** - *README source* - [Akash's Github](https://github.com/akashnimare)
 
 

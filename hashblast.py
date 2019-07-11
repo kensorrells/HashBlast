@@ -18,9 +18,12 @@ while run_cont == True:
  print("Please enter the text.")
  txt_ent = input("Text: ")
  chr_num = len(txt_ent)
- print("________________________________________")
+ print("What is the first encryption number?")
+ encrpt_1 = input(": ")
+ print("_______________________________________________")
  while run_turns +1 <= chr_num:
   cur_chr = txt_ent[run_turns]
+  cur_chr += encrpt_1
   if hsh_format == 'SHA1':
    if fun_type == 'encrypt':
     print(hashlib.sha1(cur_chr.encode()).hexdigest())
@@ -55,7 +58,7 @@ while run_cont == True:
     print("ERROR:")
     break
   run_turns += 1
- print("________________________________________")
+ print("_______________________________________________")
  print("Would you like to do anything else?")
  cont = input("   : ")
  cont.lower

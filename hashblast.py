@@ -37,22 +37,22 @@ inputMsg = input(str(':'))
 
 if prgFunction == 'encrypt':
     while currentLetterNum +1 <= len(inputMsg):
-        if encryptType == 'MD5' or 'md5':
+        if encryptType =='md5':
             currentLetter = inputMsg[currentLetterNum]
             currentLetter = hashlib.md5(currentLetter.encode()).hexdigest()
-        elif encryptType == 'SHA1' or 'sha1':
+        elif encryptType == 'sha1':
             currentLetter = inputMsg[currentLetterNum]
             currentLetter = hashlib.sha1(currentLetter.encode()).hexdigest()
-        elif encryptType == 'SHA224' or 'sha224':
+        elif encryptType == 'sha224':
             currentLetter = inputMsg[currentLetterNum]
             currentLetter = hashlib.sha224(currentLetter.encode()).hexdigest()
-        elif encryptType == 'SHA256' or 'sha256':
+        elif encryptType == 'sha256':
             currentLetter = inputMsg[currentLetterNum]
             currentLetter = hashlib.sha256(currentLetter.encode()).hexdigest()
-        elif encryptType == 'SHA384' or 'sha384':
+        elif encryptType == 'sha384':
             currentLetter = inputMsg[currentLetterNum]
             currentLetter = hashlib.sha384(currentLetter.encode()).hexdigest()
-        elif encryptType == 'SHA512' or 'sha512':
+        elif encryptType == 'sha512':
             currentLetter = inputMsg[currentLetterNum]
             currentLetter = hashlib.sha512(currentLetter.encode()).hexdigest()
         else:
@@ -60,19 +60,19 @@ if prgFunction == 'encrypt':
             break
         finalMessage += currentLetter
         currentLetterNum += 1
-        print('hello')
 elif prgFunction == 'decrypt':
-    if encryptType == 'MD5' or 'md5':
+    if encryptType == 'md5':
         while currentBlock+currentLetterNum <= len(inputMsg):
             while currentBlock+currentLetterNum <= currentLetterNum+31:
                 currentBlockList += inputMsg[currentBlock + currentLetterNum]
                 currentLetterNum += 1
             while chrListCheck <= 62:
                 chrCheck = chrList[chrListCheck]
-                chrCheck = hashlib.md5(chrCheck.encode())._hexdigest()
+                chrCheck = hashlib.md5(chrCheck.encode()).hexdigest()
                 if chrCheck == currentBlockList:
                     finalMessage += chrList[chrListCheck]
                     chrListCheck = 1000
+                    print(finalMessage)
                 else:
                     chrListCheck += 1
             currentLetterNum = 0
@@ -80,5 +80,4 @@ elif prgFunction == 'decrypt':
             chrListCheck = 0
 else:
     print('ERROR: Invalid program function')
-
 print(finalMessage)

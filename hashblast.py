@@ -19,23 +19,24 @@ currentLetterNum = 0
 currentLetter = ''
 
 #Variable for decryption
-currentBlock = 0
-currentLetterNum = 0
-currentBlockList = ''
-chrListCheck = 0
-chrCheck = ''
+alphaCounter = 0
+conversionHolder = 0
+block = ''
+i = 0
+x = 0
+currentAlpha = 0
 
 #Variable for output
 finalMessage = ''
 
 print('Would you like to encrypt or decrypt?')
 prgFunction = input(str(':'))
-print('What form of encryption would you like to do?')
-encryptType = input(str(':'))
-print('What is the message?')
-inputMsg = input(str(':'))
 
 if prgFunction == 'encrypt':
+    print('What form of encryption would you like to do?')
+    encryptType = input(str(':'))
+    print('What is the message?')
+    inputMsg = input(str(':'))
     while currentLetterNum +1 <= len(inputMsg):
         if encryptType =='md5':
             currentLetter = inputMsg[currentLetterNum]
@@ -61,23 +62,125 @@ if prgFunction == 'encrypt':
         finalMessage += currentLetter
         currentLetterNum += 1
 elif prgFunction == 'decrypt':
-    if encryptType == 'md5':
-        while currentBlock+currentLetterNum <= len(inputMsg):
-            while currentBlock+currentLetterNum <= currentLetterNum+31:
-                currentBlockList += inputMsg[currentBlock + currentLetterNum]
-                currentLetterNum += 1
-            while chrListCheck <= 62:
-                chrCheck = chrList[chrListCheck]
-                chrCheck = hashlib.md5(chrCheck.encode()).hexdigest()
-                if chrCheck == currentBlockList:
-                    finalMessage += chrList[chrListCheck]
-                    chrListCheck = 1000
-                    print(finalMessage)
+    print('What format is your message encrypted in?')
+    encryptType = input(str(':'))
+    print('What is the secret code?')
+    inputMsg = input(str(':'))
+    while x <= len(inputMsg):
+        if encryptType == 'md5':
+            while i+x <= x+31:
+                currentAlpha = x + i
+                block += inputMsg[currentAlpha]
+                i += 1
+            i = 0
+            while alphaCounter <= 62:
+                conversionHolder = chrList[alphaCounter]
+                conversionHolder = hashlib.md5(conversionHolder.encode()).hexdigest()
+                if block == conversionHolder:
+                    finalMessage += chrList[alphaCounter]
+                    alphaCounter = 100
                 else:
-                    chrListCheck += 1
-            currentLetterNum = 0
-            currentBlock += 32
-            chrListCheck = 0
+                    alphaCounter += 1
+            alphaCounter = 0
+            block = ''
+            x += 32
+            if x >= len(inputMsg):
+                print(finalMessage)
+        elif encryptType == 'sha1':
+            while i+x <= x+39:
+                currentAlpha = x + i
+                block += inputMsg[currentAlpha]
+                i += 1
+            i = 0
+            while alphaCounter <= 62:
+                conversionHolder = chrList[alphaCounter]
+                conversionHolder = hashlib.sha1(conversionHolder.encode()).hexdigest()
+                if block == conversionHolder:
+                    finalMessage += chrList[alphaCounter]
+                    alphaCounter = 100
+                else:
+                    alphaCounter += 1
+            alphaCounter = 0
+            block = ''
+            x += 40
+            if x >= len(inputMsg):
+                print(finalMessage)
+        elif encryptType == 'sha224':
+            while i+x <= x+55:
+                currentAlpha = x + i
+                block += inputMsg[currentAlpha]
+                i += 1
+            i = 0
+            while alphaCounter <= 62:
+                conversionHolder = chrList[alphaCounter]
+                conversionHolder = hashlib.sha224(conversionHolder.encode()).hexdigest()
+                if block == conversionHolder:
+                    finalMessage += chrList[alphaCounter]
+                    alphaCounter = 100
+                else:
+                    alphaCounter += 1
+            alphaCounter = 0
+            block = ''
+            x += 56
+            if x >= len(inputMsg):
+                print(finalMessage)
+        elif encryptType == 'sha256':
+            while i+x <= x+63:
+                currentAlpha = x + i
+                block += inputMsg[currentAlpha]
+                i += 1
+            i = 0
+            while alphaCounter <= 62:
+                conversionHolder = chrList[alphaCounter]
+                conversionHolder = hashlib.sha256(conversionHolder.encode()).hexdigest()
+                if block == conversionHolder:
+                    finalMessage += chrList[alphaCounter]
+                    alphaCounter = 100
+                else:
+                    alphaCounter += 1
+            alphaCounter = 0
+            block = ''
+            x += 64
+            if x >= len(inputMsg):
+                print(finalMessage)
+        elif encryptType == 'sha384':
+            while i+x <= x+95:
+                currentAlpha = x + i
+                block += inputMsg[currentAlpha]
+                i += 1
+            i = 0
+            while alphaCounter <= 62:
+                conversionHolder = chrList[alphaCounter]
+                conversionHolder = hashlib.sha224(conversionHolder.encode()).hexdigest()
+                if block == conversionHolder:
+                    finalMessage += chrList[alphaCounter]
+                    alphaCounter = 100
+                else:
+                    alphaCounter += 1
+            alphaCounter = 0
+            block = ''
+            x += 96
+            if x >= len(inputMsg):
+                print(finalMessage)
+        elif encryptType == 'sha512':
+            while i+x <= x+127:
+                currentAlpha = x + i
+                block += inputMsg[currentAlpha]
+                i += 1
+            i = 0
+            while alphaCounter <= 62:
+                conversionHolder = chrList[alphaCounter]
+                conversionHolder = hashlib.sha256(conversionHolder.encode()).hexdigest()
+                if block == conversionHolder:
+                    finalMessage += chrList[alphaCounter]
+                    alphaCounter = 100
+                else:
+                    alphaCounter += 1
+            alphaCounter = 0
+            block = ''
+            x += 128
+            if x >= len(inputMsg):
+                print(finalMessage)
 else:
     print('ERROR: Invalid program function')
 print(finalMessage)
